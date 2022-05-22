@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borang</title>
+    <link rel="stylesheet" href="butiran.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="column">
+            <h1>BORANG</h1>
+            <form name="myForm" action="simpan.php" method="post" onsubmit="return borang()">
+                <table>
+                    <tr>
+                        <td><label for="name">NAMA:</label></td>
+                        <td><input type="text" name="nama" id="nama" oninvalid="alert('You must fill out the nama!');" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="alamat">Alamat:</label></td>
+                        <td>
+                            <textarea name="alamat" id="alamat" oninvalid="alert('You must fill out the alamat!');" required cols="20" rows="2"></textarea>
+                        </td>
+                    <tr>
+                        <td><label for="jantina" oninvalid="alert('You must fill out the jantina!');" required>Jantina:</label></td>
+                        <td>
+                            <label>
+                                <input type="radio" id="lelaki" value="Lelaki">Lelaki
+                            </label>
+                            <label>
+                                <input type="radio" id="wanita" value="Wanita">Wanita
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="bangsa" >Bangsa:</label></td>
+                        <td>
+                            <select name="bangsa" id="bangsa" oninvalid="alert('You must fill out the bangsa!');" required>
+                                <option value=""></option>
+                                <option value="Melayu">Melayu</option>
+                                <option value="Cina">Cina</option>
+                                <option value="India">India</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <button type="submit" onclick="checkButton()">SIMPAN</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <h3 id="disp" style="color:green"></h3>
+        <h4 id="error" style="color:red"></h4>
+
+        <div class="column">
+            <h1>BUTIRAN</h1>
+            <p>NAMA : <span id="paparnama"></span></p>
+            <P>ALAMAT : <span id="paparalamat"></span></P>
+            <p>JANTINA : <span id="paparjantina"></span></p>
+            <P>BANGSA : <span id="paparbangsa"></span></P>
+        </div>
+
+        <script src="butiran.js"></script>
+
+</body>
+
+</html>
